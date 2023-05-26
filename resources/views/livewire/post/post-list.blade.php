@@ -11,6 +11,7 @@
                     <thead>
                         <th>{{__('ID')}}</th>
                         <th>{{__('Title')}}</th>
+                        <th>{{__('Content')}}</th>
                         <th>{{__('Action')}}</th>
                     </thead>
                     @if (!empty($posts))
@@ -19,8 +20,9 @@
                             <tr>
                                 <td>{{ $d->id }}</td>
                                 <td>{{ $d->title }}</td>
+                                <td>{{ $d->content }}</td>
                                 <td>
-                                    <a href="" class="btn btn-sm btn-success">
+                                    <a href="{{url('post/edit/'.$d->id)}}" class="btn btn-sm btn-success">
                                         <i class="bi bi-pencil"></i>
                                     </a>
                                     <a href="" class="btn btn-sm btn-danger">

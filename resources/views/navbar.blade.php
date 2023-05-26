@@ -15,8 +15,8 @@
               {{ __('post')}}
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{{ url('posts/add') }}">{{ __('Tambah Post')}}</a></li>
-              <li><a class="dropdown-item" href="{{ url('posts/list') }}">{{ __('Data Post')}}</a></li>
+              <li><a class="dropdown-item" href="{{ url('post/add') }}">{{ __('Tambah Post')}}</a></li>
+              <li><a class="dropdown-item" href="{{ url('post/list') }}">{{ __('Data Post')}}</a></li>
             </ul>
           </li>
 
