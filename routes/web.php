@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::view('/post/add', 'posts.add');
+Route::view('/post/list', 'posts.list');

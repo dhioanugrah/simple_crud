@@ -26,6 +26,7 @@ class Add extends Component
         $post->content = $this->content;
         try {
             $post->save();
+            $this->reset();
             session()->flash('msg', __('Post Saved Sucessfully'));
             session()->flash('alert', 'successs');
         } catch (\Throwable $th) {
