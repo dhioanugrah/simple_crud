@@ -17,4 +17,16 @@ class PostList extends Component
         $data = Post::where('title','like','%' . $this->keyword. '%')->paginate(12);
         return $data;
     }
+    public function deletePost($id){
+        $post = Post::find($id);
+        if (!empty($post)) 
+        {
+            $post->delete();
+            session()->flash('msg', __('Post Delete Sucessfully'));
+            session()->flash('alert', 'successs');
+        }else{
+            session()->flash('msg', __('Post Not Found'));
+            session()->flash('alert', 'danger');
+        }
+        }
 }
