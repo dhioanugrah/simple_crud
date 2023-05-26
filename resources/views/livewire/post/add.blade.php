@@ -3,6 +3,9 @@
         <div class="card">
             <div class="card-header">{{ __('Post Add') }}</div>
             <div class="card-body">
+                <div class="alert @if(!empty(session('alert'))) alert-{{session('msg')}} @else d-none @endif">
+                    @if(!empty(session('msg'))) {{session('msg')}} @endif
+                </div>
                 <form wire:submit.prevent="save">
                     <div class="form-group mb-3">
                         <label for="title">{{ __('Title') }}</label>
