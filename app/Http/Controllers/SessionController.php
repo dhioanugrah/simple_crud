@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 class SessionController extends Controller
@@ -12,6 +14,8 @@ class SessionController extends Controller
     }
 
     function login(Request $request){
+        
+
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
             'password' => 'required',
@@ -36,9 +40,9 @@ class SessionController extends Controller
         ];
 
         if(Auth::attempt($infologin)){
-            return 'sukses';
+            return redirect('/post/list');
         } else {
-            return 'gagal';
+            return redirect('sesi')->withErrors('Username dan Password Salah');
         }
     }
 }
