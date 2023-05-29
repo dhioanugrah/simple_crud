@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,6 @@ Route::view('/post/list', 'posts.list');
 Route::get('/post/edit/{id}', function($id){
     return view('posts.edit', ['id'=>$id]);
 });
+
+Route::get('/sesi', [SessionController::class, 'index']);
+Route::post('/sesi/login', [SessionController::class, 'login']);
